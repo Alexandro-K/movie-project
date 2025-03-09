@@ -40,7 +40,7 @@ export const SearchProvider = ({children}) => {
         try{
             const searchResult = await searchMovies(searchQuery);
             setSearchResults(searchResult);
-            navigate(`${import.meta.env.BASE_URL}searchResult`);
+            navigate("/searchResult");
             setError(null);
         }catch(err){
             console.log(err);
