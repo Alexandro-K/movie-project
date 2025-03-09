@@ -6,10 +6,11 @@ const NavBar = () => {
   const { searcQuery, setSearchQuery, handleSearch } = useSearchContext();
 
   const navItems = [
-    { path: '/', link: 'Home' },
-    { path: '/favorites', link: 'Favorites' },
-    { path: '/topRated', link: 'TopRated' },
-  ]
+    { path: `${import.meta.env.BASE_URL}`, link: 'Home' },
+    { path: `${import.meta.env.BASE_URL}favorites`, link: 'Favorites' },
+    { path: `${import.meta.env.BASE_URL}topRated`, link: 'TopRated' },
+  ];
+  
 
 
   return (
@@ -17,7 +18,7 @@ const NavBar = () => {
       <div className="flex justify-between h-full">
         {/* Title (Left Side)*/}
         <div className="my-auto text-4xl text-blue-400 font-bold mx-4">
-          <Link to='/'>MyMovies</Link>
+          <Link to={`${import.meta.env.BASE_URL}`}>MyMovies</Link>
         </div>
 
         {/* Navigation & Search (Right Side) */}
