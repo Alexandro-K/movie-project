@@ -6,7 +6,7 @@ const NavBar = () => {
   const { searcQuery, setSearchQuery, handleSearch } = useSearchContext();
 
   const navItems = [
-    { path: '/movie-project', link: 'Home' },
+    { path: '/', link: 'Home' },
     { path: '/favorites', link: 'Favorites' },
     { path: '/topRated', link: 'TopRated' },
   ]
