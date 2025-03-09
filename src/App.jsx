@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar.jsx'
 import Home from './pages/Home.jsx'
 import Favorites from './pages/Favorites.jsx'
@@ -9,7 +9,7 @@ import SearchResult from './pages/SearchResult.jsx'
 
 function App() {
   return (
-    <>
+    <Router basename="/movie-project">
       <SearchProvider>
         <MovieProvider>
           <NavBar />
@@ -23,7 +23,7 @@ function App() {
           </main>
         </MovieProvider>
       </SearchProvider>
-    </>
+    </Router>
   )
 }
 

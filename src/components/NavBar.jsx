@@ -7,9 +7,10 @@ const NavBar = () => {
 
   const navItems = [
     { path: `${import.meta.env.BASE_URL}`, link: 'Home' },
-    { path: '/favorites', link: 'Favorites' },
-    { path: '/topRated', link: 'TopRated' },
-  ]
+    { path: `${import.meta.env.BASE_URL}favorites`, link: 'Favorites' },
+    { path: `${import.meta.env.BASE_URL}topRated`, link: 'TopRated' },
+  ];
+  
 
 
   return (
