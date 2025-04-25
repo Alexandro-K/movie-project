@@ -6,9 +6,9 @@ const NavBar = () => {
   const { searcQuery, setSearchQuery, handleSearch } = useSearchContext();
 
   const navItems = [
-    { path: `/movie-project/`, link: 'Home' },
-    { path: `/movie-project/favorites`, link: 'Favorites' },
-    { path: `/movie-project/topRated`, link: 'TopRated' },
+    { path: `/`, link: 'Home' },
+    { path: `/favorites`, link: 'Favorites' },
+    { path: `/topRated`, link: 'TopRated' },
   ];
   
 
@@ -30,7 +30,6 @@ const NavBar = () => {
                 <li className='text-blue-400 hover:text-blue-500 text-lg font-semibold' key={path}>
                   <NavLink
                     to={path}
-                    end={path === '/movie-project/'}
                     className={({ isActive }) =>
                       `text-blue-400 hover:text-blue-500 text-lg font-semibold ${isActive ? 'underline underline-offset-4 decoration-2 text-blue-500' : ''}`
                     }

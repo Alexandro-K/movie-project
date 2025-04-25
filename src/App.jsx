@@ -14,10 +14,10 @@ function App() {
           <NavBar />
           <main>
             <Routes>
-              <Route path="/movie-project/" element={<Home />} />
-              <Route path="/movie-project/favorites" element={<Favorites />} />
-              <Route path="/movie-project/topRated" element={<TopRated />} />
-              <Route path="/movie-project/searchResult" element={<SearchResult />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/topRated" element={<TopRated />} />
+              <Route path="/searchResult" element={<SearchResult />} />
             </Routes>
           </main>
         </MovieProvider>
