@@ -6,9 +6,9 @@ const NavBar = () => {
   const { searcQuery, setSearchQuery, handleSearch } = useSearchContext();
 
   const navItems = [
-    { path: `${import.meta.env.BASE_URL}`, link: 'Home' },
-    { path: `${import.meta.env.BASE_URL}favorites`, link: 'Favorites' },
-    { path: `${import.meta.env.BASE_URL}topRated`, link: 'TopRated' },
+    { path: `/movie-project/`, link: 'Home' },
+    { path: `/movie-project/favorites`, link: 'Favorites' },
+    { path: `/movie-project/topRated`, link: 'TopRated' },
   ];
   
 
@@ -18,7 +18,7 @@ const NavBar = () => {
       <div className="flex justify-between h-full">
         {/* Title (Left Side)*/}
         <div className="my-auto text-4xl text-blue-400 font-bold mx-4">
-          <Link to={`${import.meta.env.BASE_URL}`}>MyMovies</Link>
+          <Link to={`/movie-project`}>MyMovies</Link>
         </div>
 
         {/* Navigation & Search (Right Side) */}
@@ -30,6 +30,7 @@ const NavBar = () => {
                 <li className='text-blue-400 hover:text-blue-500 text-lg font-semibold' key={path}>
                   <NavLink
                     to={path}
+                    end={path === '/movie-project/'}
                     className={({ isActive }) =>
                       `text-blue-400 hover:text-blue-500 text-lg font-semibold ${isActive ? 'underline underline-offset-4 decoration-2 text-blue-500' : ''}`
                     }

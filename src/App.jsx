@@ -14,10 +14,10 @@ function App() {
           <NavBar />
           <main>
             <Routes>
-              <Route path={`${import.meta.env.BASE_URL}`} element={<Home />} />
-              <Route path={`${import.meta.env.BASE_URL}favorites`} element={<Favorites />} />
-              <Route path={`${import.meta.env.BASE_URL}topRated`} element={<TopRated />} />
-              <Route path={`${import.meta.env.BASE_URL}searchResult`} element={<SearchResult />} />
+              <Route path="/movie-project/" element={<Home />} />
+              <Route path="/movie-project/favorites" element={<Favorites />} />
+              <Route path="/movie-project/topRated" element={<TopRated />} />
+              <Route path="/movie-project/searchResult" element={<SearchResult />} />
             </Routes>
           </main>
         </MovieProvider>
