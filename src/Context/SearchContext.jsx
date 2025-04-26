@@ -14,6 +14,9 @@ export const SearchProvider = ({children}) => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
+    const [searchActive, setSearchActive] = useState(false);
+
+
     // Popular Movies
     useEffect(() => {
         const loadPopularMovies = async () => {
@@ -40,8 +43,9 @@ export const SearchProvider = ({children}) => {
         try{
             const searchResult = await searchMovies(searchQuery);
             setSearchResults(searchResult);
-            navigate(`${import.meta.env.BASE_URL}searchResult`);
+            navigate(`/searchResult`);
             setError(null);
+            setSearchActive(false);
         }catch(err){
             console.log(err);
             setError("Unable to find the movies...");
@@ -51,7 +55,7 @@ export const SearchProvider = ({children}) => {
         }
     }
 
-    const value = {searchQuery, setSearchQuery, movies, error, loading, handleSearch, searchResults};
+    const value = {searchQuery, setSearchQuery, movies, error, loading, handleSearch, searchResults, searchActive, setSearchActive};
 
     return (
         <SearchContext.Provider value={value}>

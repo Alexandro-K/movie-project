@@ -35,7 +35,7 @@ const TopRated = () => {
       {error && <div className='error'>{error}</div> }
 
       {loading ? <div className='flex justify-center items-center '>loading...</div> :
-        <div className="grid grid-cols-6 m-10 gap-6">
+        <div className="grid grid-cols-3 lg:grid-cols-5 m-10 gap-6">
           {topRated.map((movie) => (<MovieCard movie={movie} key={movie.id}/>))}
         </div>
       }

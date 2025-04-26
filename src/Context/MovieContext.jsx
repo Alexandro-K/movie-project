@@ -5,16 +5,20 @@ export const useMovieContext = () => useContext(MovieContext);
 
 export const MovieProvider = ({ children }) => {
     const [favorites, setFavorites] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     // Fetching Favorites
     useEffect(() => {
         const storedFavorites = localStorage.getItem("favorites");
         if (storedFavorites) setFavorites(JSON.parse(storedFavorites));
+        setIsLoading(false);
     }, [])
 
     // Saving Favorite
     useEffect(() => {
-        localStorage.setItem('favorites', JSON.stringify(favorites));
+        if(!isLoading){
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        }
     }, [favorites])
 
     // Adding To Favorite
@@ -32,7 +36,7 @@ export const MovieProvider = ({ children }) => {
         return favorites.some(movie => movie.id === movieId);
     }
 
-    const value = {addToFavorites, removeFromFavorites, isFavorite, favorites};
+    const value = {addToFavorites, removeFromFavorites, isFavorite, favorites, isLoading};
 
     return <MovieContext.Provider value={value}>
         {children}

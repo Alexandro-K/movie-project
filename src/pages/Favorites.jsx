@@ -3,7 +3,11 @@ import { useMovieContext } from '../Context/MovieContext'
 import MovieCard from '../components/MovieCard';
 
 const Favorites = () => {
-  const { favorites } = useMovieContext();
+  const { favorites, isLoading } = useMovieContext();
+
+  if(isLoading){
+    return <h3>Loading...</h3>
+  }
 
   if(favorites){
     return (

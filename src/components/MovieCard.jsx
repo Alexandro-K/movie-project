@@ -23,9 +23,9 @@ const MovieCard = ({ movie }) => {
         {/* Favorite Button */}
         <div className="">
           <button className="absolute top-2 right-2 flex items-center justify-center w-9 h-9 p-0 rounded-full border border-slate-400  hover:border-slate-600 bg-blue-100/30 hover:bg-red-500/30"onClick={onFavoriteClick}>
-          {/* Emoji */}
-          <span className="relative text-lg z-10">{favorite ? '❤️' : '🤍'}</span>
-</button>
+            {/* Emoji */}
+            <span className="relative text-lg z-10">{favorite ? '❤️' : '🤍'}</span>
+          </button>
 
         </div>
         {/* Movie Title & Release Date */}
