@@ -30,7 +30,7 @@ const MovieSlider = ({title, movies}) => {
     const el = scrollRef.current;
     if (!el) return;
 
-    const scrollAmount = 500;
+    const scrollAmount = 1000;
     el.scrollBy({left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth'});
   }
 
@@ -69,15 +69,15 @@ const MovieSlider = ({title, movies}) => {
       <div className="px-12 relative">
         {/* Prev Button */}
         {scrollLeft && (
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10">
-          <button className='rounded-2xl p-2 border cursor-pointer border-blue-400 text-blue-400 bg-blue-100 hover:scale-110 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-300 transition-all duration-300' onClick={() => scroll('left')}>&lt;</button>
+        <div className="hidden lg:block absolute left-4 top-1/2 -translate-y-1/2 z-10">
+          <button className='rounded-2xl p-2 border-2 cursor-pointer border-blue-500 text-blue-500 bg-blue-100 hover:scale-110 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-400 transition-all duration-300' onClick={() => scroll('left')}>&lt;</button>
         </div>
         )}
 
         {/* Next Button */}
         {scrollright && (
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10">
-          <button className='rounded-2xl p-2 border cursor-pointer border-blue-400 text-blue-400 bg-blue-100 hover:scale-110 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-300 transition-all duration-300' onClick={() => scroll('right')}>&gt;</button>
+        <div className="hidden lg:block  absolute right-4 top-1/2 -translate-y-1/2 z-10">
+          <button className='rounded-2xl p-2 border-2 cursor-pointer border-blue-500 text-blue-500 bg-blue-100 hover:scale-110 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-400 transition-all duration-300' onClick={() => scroll('right')}>&gt;</button>
         </div>
         )}
 

@@ -54,7 +54,7 @@ const NavBar = () => {
       <div className="flex justify-between items-center h-full w-full">
         {/* Title (Left Side)*/}
         <div className="flex-1">
-          <Link to={`/`} className="text-4xl text-blue-400 font-bold mx-4">MyMovies</Link>
+          <Link to={`/`} className="text-4xl text-blue-400 font-bold mx-4 hover:opacity-80 transition duration-300">MyMovies</Link>
         </div>
 
         {/* Hamburger Icon For Mobile */}
@@ -75,8 +75,9 @@ const NavBar = () => {
                   <li className='text-blue-400 hover:text-blue-500 text-lg font-semibold m-4' key={path}>
                     <NavLink
                       to={path}
-                      className={({ isActive }) =>
-                        `text-blue-400 hover:text-blue-500 text-lg font-semibold ${isActive ? 'underline underline-offset-4 decoration-2 text-blue-500' : ''}`
+                      className={({ isActive }) => 
+                      `relative text-blue-400 hover:text-blue-500 text-lg font-semibold scale-x-0 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-blue-500 after:transition-all after:duration-300 
+                      ${isActive ? 'after:scale-x-100' : 'after:scale-x-0 hover:after:scale-x-100'}`
                       }
                     >
                       {link}

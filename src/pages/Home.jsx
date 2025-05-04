@@ -4,7 +4,7 @@ import MovieSlider from '../components/MovieSlider';
 
 
 const Home = () => {
-  const {error, loading, movies} = useSearchContext();
+  const {error, loading, moviesByGenre, popularMovies} = useSearchContext();
 
   return (
     <div className='relative'>
@@ -16,10 +16,14 @@ const Home = () => {
       {loading && <div className='flex justify-center items-center '>loading...</div>}
 
       {/* Jika Movie Tidak ditemukan */}
-      {!loading && !error && movies.length === 0 && <div className="font-bold text-3xl flex justify-center my-8">No Movies Found</div>}
+      {/* {!loading && !error && movies.length === 0 && <div className="font-bold text-3xl flex justify-center my-8">No Movies Found</div>} */}
 
       {/* Memanggil movie slider */}
-      <MovieSlider title="Trending Now" movies={movies}/>
+
+      <MovieSlider key={popularMovies.id} title='Popular Movies' movies={popularMovies}/>
+      {Object.entries(moviesByGenre).map(([genreName, movies]) => (
+        <MovieSlider key={genreName} title={`${genreName} Movies`} movies={movies}/>
+      ))}
     </div>
   );
 };

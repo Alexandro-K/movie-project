@@ -41,7 +41,7 @@ const MovieCard = ({ movie }) => {
         </div>
         {/* Movie Title & Release Date */}
         <div className="flex flex-col justify-between m-2 text-slate-700 bg-slate">
-          <h3 className='font-semibold tracking-wide'>{movie.title.length > 20 ? movie.title.slice(0,20) + '....' : movie.title}</h3>
+          <h3 className='font-semibold tracking-wide'>{movie.title.length > 20 ? movie.title.slice(0,15) + '....' : movie.title}</h3>
           <p>{movie.release_date?.split("-")[0]}</p>
           {/* <button 
             onClick={handleMoreClick}
