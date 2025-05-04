@@ -93,7 +93,7 @@ const NavBar = () => {
             <Search color='white' size={32} />
         </div>
         <div className="lg:flex lg:flex-1 lg:items-center">
-          <div ref={searchFormRef} className={`${searchActive ? '' : 'hidden'} absolute right-2 mt-10 bg-blue-700 lg:bg-transparent rounded-xl p-4 lg:block lg:mt-0 lg:flex`}>
+          <div ref={searchFormRef} className={`${searchActive ? '' : 'hidden'} absolute right-2 mt-10 bg-blue-700 lg:bg-transparent rounded-xl p-4 lg:mt-0 lg:flex`}>
             <form action="" onSubmit={handleSearch} className='flex gap-4 mr-4 h-12 my-auto'>
               <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder='Search movies here...' className='p-2 border rounded-md text-white border-blue-400 placeholder-blue-100 focus:outline-none' />
               <button type='submit' className='bg-blue-400 text-white px-4 rounded-md cursor-pointer'>Search</button>

@@ -6,6 +6,7 @@ export const useMovieContext = () => useContext(MovieContext);
 export const MovieProvider = ({ children }) => {
     const [favorites, setFavorites] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [selectedMovie, setSelectedMovie] = useState(null);
 
     // Fetching Favorites
     useEffect(() => {
@@ -36,7 +37,7 @@ export const MovieProvider = ({ children }) => {
         return favorites.some(movie => movie.id === movieId);
     }
 
-    const value = {addToFavorites, removeFromFavorites, isFavorite, favorites, isLoading};
+    const value = {addToFavorites, removeFromFavorites, isFavorite, favorites, isLoading, selectedMovie, setSelectedMovie};
 
     return <MovieContext.Provider value={value}>
         {children}

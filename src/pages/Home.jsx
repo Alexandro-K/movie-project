@@ -1,21 +1,27 @@
-import React from 'react'
+import { React }  from 'react'
 import { useSearchContext } from '../Context/SearchContext'
-import MovieCard from '../components/MovieCard';
+import MovieSlider from '../components/MovieSlider';
 
 
 const Home = () => {
   const {error, loading, movies} = useSearchContext();
 
   return (
-    <div className=''>
+    <div className='relative'>
+
+      {/* Error Checker */}
       {error && <div className='error'>{error}</div> }
+
+      {/* Loading */}
       {loading && <div className='flex justify-center items-center '>loading...</div>}
-      {!loading && !error && movies.length === 0 && <div className="font-bold text-3xl flex justify-center my-8">No Movies Found</div>} 
-        <div className="grid grid-cols-3 lg:grid-cols-5 m-10 gap-6">
-          {movies.map((movie) => (<MovieCard movie={movie} key={movie.id}/>))}
-        </div>
+
+      {/* Jika Movie Tidak ditemukan */}
+      {!loading && !error && movies.length === 0 && <div className="font-bold text-3xl flex justify-center my-8">No Movies Found</div>}
+
+      {/* Memanggil movie slider */}
+      <MovieSlider title="Trending Now" movies={movies}/>
     </div>
-  )
-}
+  );
+};
 
 export default Home
